@@ -6,15 +6,15 @@ metadata:
     env: test
 spec:
   affinity:
-      nodeAffinity:
+    nodeAffinity:
       # Hard rule
-        requiredDuringSchedulingIgnoredDuringExecution:
-          nodeSelectorTerms:
-          - matchExpressions:
-            - key: topology.kubernetes.io/zone
-              operator: NoIn
-              values:
-              - un-east-1d
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: topology.kubernetes.io/zone
+            operator: NoIn
+            values:
+            - un-east-1d
   containers:
   - name: nginx
     image: nginx
